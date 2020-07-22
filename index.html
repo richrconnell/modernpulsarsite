@@ -11,7 +11,9 @@
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
-
+        gtag('set', {
+            'user_id': 'USER_ID'
+        }); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-149993844-1');
     </script>
 
