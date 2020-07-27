@@ -378,25 +378,27 @@
                         <div class="contact-two__form-wrap">
                             <h3>Leave a Comment</h3>
 
-                            <form action="assets/inc/sendemail.php" class="contact-one__form">
+                            <form id="template_dPfqWzjT" class="contact-one__form">
+                                <input type="hidden" name="contact_number">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Your Name*">
+                                        <input type="text" name="name" placeholder="Your Name*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Email*">
+                                        <input type="email" name="email" placeholder="Email*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="url" name="website" placeholder="Website*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Subject">
+                                        <input type="text" name="subject" placeholder="Subject">
                                     </div><!-- /.col-md-6 -->
-                                    <div class="col-md-12">
-                                        <textarea name="message" placeholder="Massage"></textarea><!-- /# -->
-                                    </div><!-- /.col-md-12 -->
-                                    <div class="col-md-12 text-left">
-                                        <button type="submit" class="thm-btn contact-one__btn">Send Now</button>
+                                    <div class="col-md-6">
+                                        <input type="text" name="message" placeholder="Comment">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" value="Send" class="thm-btn contact-one__btn"
+                                            onclick="submitForm()">Send Now</button>
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                             </form><!-- /.contact-one__form -->
@@ -481,7 +483,7 @@
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.blogs -->
-        <section class="mailchimp-one">
+        <!-- <section class="mailchimp-one">
             <div class="container">
                 <div class="inner-container">
                     <img src="assets/images/orig-images/subscribe-moc-1-1.png" class="mailchimp-one__moc-1" alt="">
@@ -492,15 +494,15 @@
                     <div class="block-title text-center">
                         <p><span>Newsletter</span></p>
                         <h3>Signup for Our Latest <br> <span>Update</span></h3>
-                    </div><!-- /.block-title text-center -->
+                    </div>
                     <form action="#" class="mailchimp-one__form">
                         <input type="text" name="email" placeholder="Enter your email">
                         <button type="submit" class="thm-btn mailchimp-one__btn">Subscribe Now</button>
-                        <!-- /.thm-btn mailchimp-one__btn -->
-                    </form><!-- /.mailchimp-one__form -->
-                </div><!-- /.inner-container -->
-            </div><!-- /.container -->
-        </section><!-- /.mailchimp-one -->
+                      
+                    </form>
+                </div>
+            </div>
+        </section> -->
 
         <footer class="site-footer">
             <div class="particles-snow" id="footer-snow"></div><!-- /#footer-snow.particles-snow -->

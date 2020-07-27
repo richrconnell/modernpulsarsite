@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149993844-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('set', {
+            'user_id': 'USER_ID'
+        }); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-149993844-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us || Pulsar Digital Marketing, Inc.</title>
@@ -28,7 +42,35 @@
     <!-- Template Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
+                event) {
+                event.preventDefault();
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
+                emailjs.reset();
+            });
+        }
+    </script>
 
+    <script type="text/javascript">
+        function submitForm() {
+            // Get the first form with the name
+            // Hopefully there is only one, but there are more, select the correct index
+            var frm = document.getElementsByClassName('contact-one__form')[0];
+            frm.submit(); // Submit
+            frm.reset(); // Reset
+            return false; // Prevent page refresh
+        }
+    </script>
 </head>
 
 <body>
@@ -152,13 +194,18 @@
                             <p>Need Help? Have Questions About Our Digital Marketing Services? </p>
                             <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
                                 class="banner-one__form">
+                                <!-- <input type="hidden" name="contact_number"> -->
                                 <input type="hidden" name="u" value="954012d85de586753d2d51b84">
                                 <input type="hidden" name="id" value="c5949260f9">
                                 <div class="banner-one__form-box">
-                                    <input type="url" name="MERGE5" placeholder="Your Website URL">
-                                    <input type="email" name="b_email" placeholder="Email">
+                                    <input type="url" name="MERGE5" id="MERGE5" placeholder="Your Website URL">
+                                    <input type="email" name="b_email" id="b_email" placeholder="Email">
                                 </div><!-- /.banner-one__form-box -->
-                                <button type="submit" class="thm-btn banner-one__btn"><span>Start Now</span></button>
+                                <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
+                                onclick="submitForm()"></input> -->
+                                <button type="submit" value="Send" class="thm-btn banner-one__btn"
+                                    onclick="submitForm()"><span>Start
+                                        Now</span></button>
                                 <!-- /.thm-btn banner-one__btn -->
                             </form><!-- /.banner-one__form -->
                         </div><!-- /.banner-one__content -->
@@ -241,29 +288,32 @@
                     <div class="col-xl-7">
                         <div class="contact-two__form-wrap">
                             <h3>Ready to Get Started?</h3>
-
-                            <form action="assets/inc/sendemail.php" class="contact-one__form">
+                            <form id="template_dPfqWzjT" class="contact-one__form">
+                                <input type="hidden" name="contact_number">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Your Name*">
+                                        <input type="text" name="name" placeholder="Your Name*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Email*">
+                                        <input type="email" name="email" placeholder="Email*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Phone">
+                                        <input type="url" name="website" placeholder="Website*">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="Subject">
+                                        <input type="text" name="subject" placeholder="Subject">
                                     </div><!-- /.col-md-6 -->
-                                    <div class="col-md-12">
-                                        <textarea name="message" placeholder="Massage"></textarea><!-- /# -->
-                                    </div><!-- /.col-md-12 -->
-                                    <div class="col-md-12 text-left">
-                                        <button type="submit" class="thm-btn contact-one__btn">Send Now</button>
+                                    <div class="col-md-6">
+                                        <input type="text" name="message" placeholder="Message">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" value="Send" class="thm-btn contact-one__btn"
+                                            onclick="submitForm()">Send Now</button>
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                             </form><!-- /.contact-one__form -->
+
+
 
                         </div><!-- /.contact-two__form-wrap -->
                     </div><!-- /.col-xl-7 -->
@@ -275,7 +325,7 @@
 
 
 
-        <section class="mailchimp-one">
+        <!-- <section class="mailchimp-one">
             <div class="container">
                 <div class="inner-container">
                     <img src="assets/images/orig-images/subscribe-moc-1-1.png" class="mailchimp-one__moc-1" alt="">
@@ -286,21 +336,17 @@
                     <div class="block-title text-center">
                         <p><span>Newsletter</span></p>
                         <h3>Signup for Our Latest <br> <span>Update</span></h3>
-                    </div><!-- /.block-title text-center -->
+                    </div>
 
-                    <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
-                        class="mailchimp-one__form">
-                        <input type="hidden" name="u" value="954012d85de586753d2d51b84">
-                        <input type="hidden" name="id" value="c5949260f9">
-                        <div class="banner-one__form-box">
-                            <input type="email" name="b_email" placeholder="Enter your email">
-                        </div><!-- /.banner-one__form-box -->
-                        <button type="submit" class="thm-btn mailchimp-one__btn"><span>Subscribe Now</span></button>
-                        <!-- /.thm-btn banner-one__btn -->
-                    </form><!-- /.banner-one__form -->
-                </div><!-- /.inner-container -->
-            </div><!-- /.container -->
-        </section><!-- /.mailchimp-one -->
+                    <form id="template_dPfqWzjT_clone2" class="mailchimp-one__form">
+                        <input type="hidden" name="contact_number">
+                        <input type="email" name="email" placeholder="Enter your email">
+                        <button type="submit" value="Send" class="thm-btn mailchimp-one__btn">Subscribe Now</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </section> -->
 
         <footer class="site-footer">
             <div class="particles-snow" id="footer-snow"></div><!-- /#footer-snow.particles-snow -->

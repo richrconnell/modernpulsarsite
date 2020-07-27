@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149993844-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('set', {
+            'user_id': 'USER_ID'
+        }); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-149993844-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us || Pulsar Digital Marketing, Inc. || Marketing Agency</title>
@@ -28,6 +42,33 @@
     <!-- Template Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
+            });
+        }
+    </script>
+    <script type="text/javascript">
+        function submitForm() {
+            // Get the first form with the name
+            // Hopefully there is only one, but there are more, select the correct index
+            var frm = document.getElementsByClassName('contact-one__form')[0];
+            frm.submit(); // Submit
+            frm.reset(); // Reset
+            return false; // Prevent page refresh
+        }
+    </script>
+
 
 </head>
 
@@ -151,15 +192,21 @@
                             <h3>Who We Are</h3>
                             <p>Pulsar Digital Marketing Brings To The Table A Full Suite Of Digital Marketing Tools
                                 Built To Scale With Your Organization. </p>
+
                             <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
                                 class="banner-one__form">
+                                <!-- <input type="hidden" name="contact_number"> -->
                                 <input type="hidden" name="u" value="954012d85de586753d2d51b84">
                                 <input type="hidden" name="id" value="c5949260f9">
                                 <div class="banner-one__form-box">
-                                    <input type="url" name="MERGE5" placeholder="Your Website URL">
-                                    <input type="email" name="b_email" placeholder="Email">
+                                    <input type="url" name="MERGE5" id="MERGE5" placeholder="Your Website URL">
+                                    <input type="email" name="b_email" id="b_email" placeholder="Email">
                                 </div><!-- /.banner-one__form-box -->
-                                <button type="submit" class="thm-btn banner-one__btn"><span>Start Now</span></button>
+                                <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
+                                    onclick="submitForm()"></input> -->
+                                <button type="submit" value="Send" class="thm-btn banner-one__btn"
+                                    onclick="submitForm()"><span>Start
+                                        Now</span></button>
                                 <!-- /.thm-btn banner-one__btn -->
                             </form><!-- /.banner-one__form -->
                         </div><!-- /.banner-one__content -->
@@ -351,24 +398,30 @@
                     <img src="assets/images/orig-images/contact-1-moc-2.png" class="contact-one__shape-3" alt="">
                     <div class="block-title text-center">
                         <p><span>Analysis</span></p>
-                        <h3>Get Free SEO Analysis?</h3>
+                        <h3>Get Free Busines Marketing Analysis!</h3>
                     </div><!-- /.block-title text-center -->
-                    <form action="assets/inc/sendemail.php" class="contact-one__form">
+
+                    <form id="template_dPfqWzjT" class="contact-one__form">
+                        <input type="hidden" name="contact_number">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" placeholder="Your Name*">
+                                <input type="text" name="name" placeholder="Your Name*">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" placeholder="Email*">
+                                <input type="email" name="email" placeholder="Email*">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" placeholder="Website*">
+                                <input type="url" name="website" placeholder="Website*">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" placeholder="Subject">
+                                <input type="text" name="subject" placeholder="Subject">
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <input type="text" name="message" placeholder="Message">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-12 text-center">
-                                <button type="submit" class="thm-btn contact-one__btn">Send Now</button>
+                                <button type="submit" value="Send" class="thm-btn contact-one__btn"
+                                    onclick="submitForm()">Send Now</button>
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </form><!-- /.contact-one__form -->
@@ -524,6 +577,7 @@
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/particel-config.js"></script>
     <script src="assets/js/theme.js"></script>
+
 </body>
 
 </html>

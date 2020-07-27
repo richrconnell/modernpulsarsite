@@ -28,7 +28,35 @@
     <!-- Template Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
+                event) {
+                event.preventDefault();
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
+                emailjs.reset();
+            });
+        }
+    </script>
 
+    <script type="text/javascript">
+        function submitForm() {
+            // Get the first form with the name
+            // Hopefully there is only one, but there are more, select the correct index
+            var frm = document.getElementsByClassName('contact-one__form')[0];
+            frm.submit(); // Submit
+            frm.reset(); // Reset
+            return false; // Prevent page refresh
+        }
+    </script>
 </head>
 
 <body>
@@ -309,9 +337,13 @@
                         <p><span>Newsletter</span></p>
                         <h3>Signup for Our Latest <br> <span>Update</span></h3>
                     </div><!-- /.block-title text-center -->
-                    <form action="#" class="mailchimp-one__form">
-                        <input type="text" name="email" placeholder="Enter your email">
-                        <button type="submit" class="thm-btn mailchimp-one__btn">Subscribe Now</button>
+                    <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
+                        class="mailchimp-one__form">
+                        <input type="hidden" name="u" value="954012d85de586753d2d51b84">
+                        <input type="hidden" name="id" value="c5949260f9">
+                        <input type="email" name="b_email" id="b_email" placeholder="Enter your email">
+                        <button type="submit" value="Send" class="thm-btn mailchimp-one__btn"
+                            onclick="submitForm()">Subscribe Now</button>
                         <!-- /.thm-btn mailchimp-one__btn -->
                     </form><!-- /.mailchimp-one__form -->
                 </div><!-- /.inner-container -->

@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149993844-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('set', {
+            'user_id': 'USER_ID'
+        }); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-149993844-1');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Development || Services Details || Pulsar Digital Marketing, Inc. || Marketing Agency</title>
@@ -28,7 +42,35 @@
     <!-- Template Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
+                event) {
+                event.preventDefault();
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
+                emailjs.reset();
+            });
+        }
+    </script>
 
+    <script type="text/javascript">
+        function submitForm() {
+            // Get the first form with the name
+            // Hopefully there is only one, but there are more, select the correct index
+            var frm = document.getElementsByClassName('contact-one__form')[0];
+            frm.submit(); // Submit
+            frm.reset(); // Reset
+            return false; // Prevent page refresh
+        }
+    </script>
 </head>
 
 <body>
@@ -154,13 +196,18 @@
                                 user-friendliness, and calls to action. </p>
                             <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
                                 class="banner-one__form">
+                                <!-- <input type="hidden" name="contact_number"> -->
                                 <input type="hidden" name="u" value="954012d85de586753d2d51b84">
                                 <input type="hidden" name="id" value="c5949260f9">
                                 <div class="banner-one__form-box">
-                                    <input type="url" name="MERGE5" placeholder="Your Website URL">
-                                    <input type="email" name="b_email" placeholder="Email">
+                                    <input type="url" name="MERGE5" id="MERGE5" placeholder="Your Website URL">
+                                    <input type="email" name="b_email" id="b_email" placeholder="Email">
                                 </div><!-- /.banner-one__form-box -->
-                                <button type="submit" class="thm-btn banner-one__btn"><span>Start Now</span></button>
+                                <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
+                                    onclick="submitForm()"></input> -->
+                                <button type="submit" value="Send" class="thm-btn banner-one__btn"
+                                    onclick="submitForm()"><span>Start
+                                        Now</span></button>
                                 <!-- /.thm-btn banner-one__btn -->
                             </form><!-- /.banner-one__form -->
                         </div><!-- /.banner-one__content -->
@@ -309,9 +356,14 @@
                         <p><span>Newsletter</span></p>
                         <h3>Signup for Our Latest <br> <span>Update</span></h3>
                     </div><!-- /.block-title text-center -->
-                    <form action="#" class="mailchimp-one__form">
-                        <input type="text" name="email" placeholder="Enter your email">
-                        <button type="submit" class="thm-btn mailchimp-one__btn">Subscribe Now</button>
+
+                    <form action="https://pulsardigitalmail.us20.list-manage.com/subscribe/post" method="POST"
+                        class="mailchimp-one__form">
+                        <input type="hidden" name="u" value="954012d85de586753d2d51b84">
+                        <input type="hidden" name="id" value="c5949260f9">
+                        <input type="email" name="b_email" id="b_email" placeholder="Enter your email">
+                        <button type="submit" value="Send" class="thm-btn mailchimp-one__btn"
+                            onclick="submitForm()">Subscribe Now</button>
                         <!-- /.thm-btn mailchimp-one__btn -->
                     </form><!-- /.mailchimp-one__form -->
                 </div><!-- /.inner-container -->
