@@ -55,7 +55,7 @@
                 event.preventDefault();
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
+                emailjs.sendForm('gmail', 'contact_form', this);
                 emailjs.reset();
             });
         }
@@ -321,7 +321,7 @@
                     <div class="col-xl-7">
                         <div class="contact-two__form-wrap">
                             <h3>Ready to Get Started?</h3>
-                            <form id="template_dPfqWzjT" class="contact-one__form">
+                            <form id="contact_form" class="contact-one__form">
                                 <input type="hidden" name="contact_number">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -554,28 +554,7 @@
 <script type="text/javascript">
   emailjs.init('user_Pff01K4LNysgZQuI8Sfsg')
 </script>
-    <script type="text/javascript">
-    const btn = document.getElementById('button');
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
-
-   btn.value = 'Sending...';
-
-   const serviceID = 'default_service';
-   const templateID = 'template_dPfqWzjT';
-
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
-    }, (err) => {
-      btn.value = 'Send Email';
-      alert(JSON.stringify(err));
-    });
-});
-         </script>
 </body>
 
 </html>
