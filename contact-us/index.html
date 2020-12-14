@@ -71,16 +71,13 @@
                 website: document.getElementById("website").value,
                 subject: document.getElementById("subject").value,
                 message: document.getElementById("message").value,
+                contact_number: Math.random() * 100000 | 0,
             }
             // generate a five digit number for the contact_number variable
-            this.contact_number.value = Math.random() * 100000 | 0;
+            // this.contact_number.value = Math.random() * 100000 | 0;
             // these IDs from the previous steps
-            emailjs.sendForm('gmail', 'template_dPfqWzjT', this, tempParams)
-                .then(function() {
-                    console.log('SUCCESS!');
-                }, function(error) {
-                    console.log('FAILED...', error);
-                });
+            emailjs.sendForm('gmail', 'template_dPfqWzjT', tempParams)
+            emailjs.reset();
         });
     }
 </script>
@@ -572,12 +569,7 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
-    <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
-<script type="text/javascript">
-  emailjs.init('user_Pff01K4LNysgZQuI8Sfsg')
-</script>
 
 </body>
 
