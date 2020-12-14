@@ -48,20 +48,28 @@
             emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
         })();
     </script>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         window.onload = function () {
-            document.getElementById('contact_form').addEventListener('submit', function (
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
                 event) {
                 event.preventDefault();
+                var tempParams = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                website: document.getElementById("website").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+                contact_number: Math.random() * 100000 | 0,
+            }
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'contact_form', this);
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', tempParams);
                 emailjs.reset();
             });
         }
-    </script> -->
+    </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     window.onload = function() {
         document.getElementById('template_dPfqWzjT').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -80,7 +88,7 @@
             emailjs.reset();
         });
     }
-</script>
+</script> -->
 
     <script type="text/javascript">
         function submitForm() {
