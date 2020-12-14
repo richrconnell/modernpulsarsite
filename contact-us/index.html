@@ -62,9 +62,13 @@
                 contact_number: Math.random() * 100000 | 0,
             }
                 // generate the contact number value
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'template_dPfqWzjT', tempParams);
-                emailjs.reset();
+                // this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', tempParams)
+                .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
             });
         }
     </script>
