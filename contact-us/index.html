@@ -73,6 +73,7 @@
                 emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
                 .then(function() {
                         console.log('SUCCESS!');
+                        emailjs.reset();
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
