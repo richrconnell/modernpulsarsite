@@ -16,6 +16,12 @@
         }); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-149993844-1');
     </script>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("template_dPfqWzjT").submit();
+       }
+     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs || Pulsar Digital Marketing, Inc. || Small Business – Startup Tips</title>
@@ -206,7 +212,7 @@
                                 </div><!-- /.banner-one__form-box -->
                                 <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
                                     onclick="submitForm()"></input> -->
-                                <button type="submit" value="Send" class="thm-btn banner-one__btn"
+                                <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
                                 onclick="sendMail()"><span>Start
                                         Now</span></button>
                                 <!-- /.thm-btn banner-one__btn -->
@@ -447,8 +453,8 @@
                                         <input type="text" name="message" placeholder="Comment">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" value="Send" class="thm-btn contact-one__btn"
-                                            onclick="submitForm()">Send Now</button>
+                                        <button type="submit" value="Send" class="thm-btn contact-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
+                                            onclick="sendMail()">Send Now</button>
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                             </form><!-- /.contact-one__form -->
