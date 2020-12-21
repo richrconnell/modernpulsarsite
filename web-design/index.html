@@ -72,15 +72,15 @@
                 emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
                 .then(function() {
                         console.log('SUCCESS!');
-                        // emailjs.reset();
-                        // return false; // Prevent page refresh
+                         emailjs.reset();
+                         return false; // Prevent page refresh
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
             });
         }
     </script>
-
+<!-- 
     <script type="text/javascript">
         function submitForm() {
             // Get the first form with the name
@@ -90,7 +90,7 @@
             frm.reset(); // Reset
             return false; // Prevent page refresh
         }
-    </script>
+    </script> -->
     <!-- Facebook Pixel Code -->
     <script>
         ! function (f, b, e, v, n, t, s) {

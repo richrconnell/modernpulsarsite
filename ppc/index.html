@@ -72,8 +72,8 @@
             emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
             .then(function() {
                     console.log('SUCCESS!');
-                    // emailjs.reset();
-                    // return false; // Prevent page refresh
+                     emailjs.reset();
+                     return false; 
                 }, function(error) {
                     console.log('FAILED...', error);
                 });
