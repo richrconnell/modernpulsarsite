@@ -16,12 +16,12 @@
         }); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-149993844-1');
     </script>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
      <script>
        function onSubmit(token) {
          document.getElementById("template_dPfqWzjT").submit();
        }
-     </script>
+     </script> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing || Pulsar Digital Marketing, Inc. || Marketing Agency</title>
@@ -54,20 +54,34 @@
             emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
         })();
     </script>
-    <script type="text/javascript">
+     <script type="text/javascript">
         window.onload = function () {
-            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
+            document.getElementById('contact-one__form').addEventListener('submit', function (
                 event) {
                 event.preventDefault();
+                var tempParams = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                website: document.getElementById("website").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+                contact_number: Math.random() * 100000 | 0,
+            }
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'template_dPfqWzjT', this);
-                emailjs.reset();
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
+                .then(function() {
+                        console.log('SUCCESS!');
+                        // emailjs.reset();
+                        // return false; // Prevent page refresh
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
             });
         }
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function submitForm() {
             // Get the first form with the name
             // Hopefully there is only one, but there are more, select the correct 
@@ -76,7 +90,7 @@
             frm.reset(); // Reset
             return false; // Prevent page refresh
         }
-    </script>
+    </script> -->
     <!-- Facebook Pixel Code -->
     <script>
         ! function (f, b, e, v, n, t, s) {
@@ -230,7 +244,7 @@
                         <div class="banner-one__content">
                             <h3>Pick the Plan that Best Fits Your Business</h3>
                             <p><br /><br /><br /></p>
-                            <form id="template_dPfqWzjT" class="banner-one__form">
+                            <form id="contact-one__form" class="banner-one__form">
                                 <!-- <input type="hidden" name="contact_number"> -->
                                 <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
                                 <input type="hidden" name="id" value="c5949260f9"> -->
@@ -241,8 +255,8 @@
                                 </div><!-- /.banner-one__form-box -->
                                 <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
                                     onclick="submitForm()"></input> -->
-                                <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                                onclick="sendForm()"><span>Start
+                                <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" 
+                               ><span>Start
                                         Now</span></button>
                                 <!-- /.thm-btn banner-one__btn -->
                             </form><!-- /.banner-one__form -->
@@ -379,27 +393,31 @@
                         <p><span>Analysis</span></p>
                         <h3>Get Free Busines Marketing Analysis!</h3>
                     </div><!-- /.block-title text-center -->
-                    <form id="template_dPfqWzjT" class="contact-one__form">
+                    <form class="contact-one__form" id="contact-one__form">
                         <input type="hidden" name="contact_number">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" name="name" placeholder="Your Name*">
+                                <input type="text" name="name" placeholder="Your Name*" id="name">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="email" name="email" placeholder="Email*">
+                                <input type="email" name="email" placeholder="Email*" id="email">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="url" name="website" placeholder="Website*">
+                                <input type="url" name="website" placeholder="Website*" id="website">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="text" name="subject" placeholder="Subject" id="subject">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" name="message" placeholder="Message">
+                                <input type="text" name="message" placeholder="Message" id="message">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-12 text-center">
-                                <button type="submit" value="Send" class="thm-btn contact-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                                    onclick="sendForm()">Send Now</button>
+                                <button type="submit" id="submit" value="Send"
+                                class="thm-btn contact-one__btn" 
+                                
+                              
+                               >Send Now</button>
+                                    <!-- g-recaptcha data-sitekey=6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw -->
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </form><!-- /.contact-one__form -->

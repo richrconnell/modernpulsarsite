@@ -16,12 +16,12 @@
         }); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-149993844-1');
     </script>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
      <script>
        function onSubmit(token) {
          document.getElementById("template_dPfqWzjT").submit();
        }
-     </script>
+     </script> -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,9 +56,9 @@
             emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
         })();
     </script>
-    <script type="text/javascript">
+      <script type="text/javascript">
         window.onload = function () {
-            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
+            document.getElementById('contact-one__form').addEventListener('submit', function (
                 event) {
                 event.preventDefault();
                 var tempParams = {
@@ -74,6 +74,8 @@
                 emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
                 .then(function() {
                         console.log('SUCCESS!');
+                        // emailjs.reset();
+                        // return false; // Prevent page refresh
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
@@ -232,22 +234,22 @@ src="https://www.facebook.com/tr?id=293103965291054&ev=PageView&noscript=1"
                             <h3>Boost Your Ranking and Revenue <br> with our Marketing Service.</h3>
                             <p>Indepth Insights With Practical Expertise To Help You <br />Build A Growth Oriented
                                 Digital Marketing Strategy. </p>
-                            <form id="template_dPfqWzjT" class="banner-one__form">
-                                <!-- <input type="hidden" name="contact_number"> -->
-                                <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
-                                <input type="hidden" name="id" value="c5949260f9"> -->
-                                <input type="hidden" name="contact_number">
-                                <div class="banner-one__form-box">
-                                    <input type="url" name="website" id="website" placeholder="Your Website URL">
-                                    <input type="email" name="email" id="email" placeholder="Email">
-                                </div><!-- /.banner-one__form-box -->
-                                <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
-                                    onclick="submitForm()"></input> -->
-                                <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                                onclick="sendForm()"><span>Start
-                                        Now</span></button>
-                                <!-- /.thm-btn banner-one__btn -->
-                            </form><!-- /.banner-one__form -->
+                                <form id="contact-one__form" class="banner-one__form">
+                                    <!-- <input type="hidden" name="contact_number"> -->
+                                    <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
+                                    <input type="hidden" name="id" value="c5949260f9"> -->
+                                    <input type="hidden" name="contact_number">
+                                    <div class="banner-one__form-box">
+                                        <input type="url" name="website" id="website" placeholder="Your Website URL">
+                                        <input type="email" name="email" id="email" placeholder="Email">
+                                    </div><!-- /.banner-one__form-box -->
+                                    <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
+                                        onclick="submitForm()"></input> -->
+                                    <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" 
+                                   ><span>Start
+                                            Now</span></button>
+                                    <!-- /.thm-btn banner-one__btn -->
+                                </form><!-- /.banner-one__form -->
                         </div><!-- /.banner-one__content -->
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->
@@ -721,27 +723,31 @@ src="https://www.facebook.com/tr?id=293103965291054&ev=PageView&noscript=1"
                         <h3>Get Free Busines Marketing Analysis!</h3>
                     </div><!-- /.block-title text-center -->
 
-                    <form id="template_dPfqWzjT" class="contact-one__form" >
+                    <form class="contact-one__form" id="contact-one__form">
                         <input type="hidden" name="contact_number">
                         <div class="row">
                             <div class="col-md-6">
-                                <input type="text" name="name" placeholder="Your Name*">
+                                <input type="text" name="name" placeholder="Your Name*" id="name">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="email" name="email" placeholder="Email*">
+                                <input type="email" name="email" placeholder="Email*" id="email">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="url" name="website" placeholder="Website*">
+                                <input type="url" name="website" placeholder="Website*" id="website">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" name="subject" placeholder="Subject">
+                                <input type="text" name="subject" placeholder="Subject" id="subject">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-6">
-                                <input type="text" name="message" placeholder="Message">
+                                <input type="text" name="message" placeholder="Message" id="message">
                             </div><!-- /.col-md-6 -->
                             <div class="col-md-12 text-center">
-                                <button type="submit" value="Send" class="thm-btn contact-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                                onclick="submitForm()"  >Send Now</button>
+                                <button type="submit" id="submit" value="Send"
+                                class="thm-btn contact-one__btn" 
+                                
+                              
+                               >Send Now</button>
+                                    <!-- g-recaptcha data-sitekey=6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw -->
                             </div><!-- /.col-md-12 -->
                         </div><!-- /.row -->
                     </form><!-- /.contact-one__form -->
