@@ -71,7 +71,7 @@
             }
                 // generate the contact number value
                 this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
+                emailjs.sendForm('gmail', 'contact-one__form', this)
                 .then(function() {
                         console.log('SUCCESS!');
                         // emailjs.reset();
@@ -104,7 +104,7 @@
     }
 </script> -->
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function submitForm() {
             // Get the first form with the name
             // Hopefully there is only one, but there are more, select the correct 
@@ -113,7 +113,7 @@
             frm.reset(); // Reset
             return false; // Prevent page refresh
         }
-    </script>
+    </script> -->
     <!-- Facebook Pixel Code -->
     <!-- <script>
         ! function (f, b, e, v, n, t, s) {
