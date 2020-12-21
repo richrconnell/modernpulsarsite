@@ -16,12 +16,12 @@
         }); // Set the user ID using signed-in user_id.
         gtag('config', 'UA-149993844-1');
     </script>
-     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
      <script>
        function onSubmit(token) {
          document.getElementById("template_dPfqWzjT").submit();
        }
-     </script>
+     </script> -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,7 @@
     </script>
     <script type="text/javascript">
         window.onload = function () {
-            document.getElementById('template_dPfqWzjT').addEventListener('click', function (
+            document.getElementById('template_dPfqWzjT').addEventListener('submit', function (
                 event) {
                 event.preventDefault();
                 var tempParams = {
@@ -73,7 +73,8 @@
                 emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
                 .then(function() {
                         console.log('SUCCESS!');
-                        emailjs.reset();
+                        // emailjs.reset();
+                        // return false; // Prevent page refresh
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
@@ -102,7 +103,7 @@
     }
 </script> -->
 
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         function submitForm() {
             // Get the first form with the name
             // Hopefully there is only one, but there are more, select the correct 
@@ -111,7 +112,7 @@
             frm.reset(); // Reset
             return false; // Prevent page refresh
         }
-    </script> -->
+    </script>
     <!-- Facebook Pixel Code -->
     <!-- <script>
         ! function (f, b, e, v, n, t, s) {
@@ -381,8 +382,9 @@
                                         <input type="text" name="message" placeholder="Message" id="message">
                                     </div><!-- /.col-md-6 -->
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" id="submit" value="Send" class="thm-btn contact-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                                        onclick="submit">Send Now</button>
+                                        <button type="submit" id="submit" value="Send"
+                                        class="thm-btn contact-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
+                                       onclick="submitForm()">Send Now</button>
                                     </div><!-- /.col-md-12 -->
                                 </div><!-- /.row -->
                             </form><!-- /.contact-one__form -->
