@@ -21,6 +21,30 @@
        function onSubmit(token) {
          document.getElementById("contact-one__form").submit();
        }
+       window.onload = function () {
+            document.getElementById('contact-one__form').addEventListener('submit', function (
+                event) {
+                event.preventDefault();
+                var tempParams = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                website: document.getElementById("website").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+                contact_number: Math.random() * 100000 | 0,
+            }
+                // generate the contact number value
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
+                .then(function() {
+                        console.log('SUCCESS!');
+                        // emailjs.reset();
+                        // return false; // Prevent page refresh
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
      </script>
 
     <meta charset="UTF-8">
