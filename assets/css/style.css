@@ -6852,3 +6852,8 @@ a:focus {
 	position: relative;
 	bottom: 15px;
 }
+
+/* My CSS */
+#contactForm{
+	margin-top: 100px;
+}
