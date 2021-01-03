@@ -48,50 +48,7 @@
     <!-- Template Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_Pff01K4LNysgZQuI8Sfsg");
-        })();
-    </script>
-     <script type="text/javascript">
-        window.onload = function () {
-            document.getElementById('contact-one__form').addEventListener('submit', function (
-                event) {
-                event.preventDefault();
-                var tempParams = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
-                website: document.getElementById("website").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value,
-                contact_number: Math.random() * 100000 | 0,
-            }
-                // generate the contact number value
-                this.contact_number.value = Math.random() * 100000 | 0;
-                emailjs.sendForm('gmail', 'template_dPfqWzjT', this)
-                .then(function() {
-                        console.log('SUCCESS!');
-                        // emailjs.reset();
-                        // return false; // Prevent page refresh
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
-
-
-    <!-- <script type="text/javascript">
-        function submitForm() {
-            // Get the first form with the name
-            // Hopefully there is only one, but there are more, select the correct 
-            var frm = document.getElementsByClassName('contact-one__form')[0];
-            frm.submit(); // Submit
-            frm.reset(); // Reset
-            return false; // Prevent page refresh
-        }
-    </script> -->
+   
     <!-- Facebook Pixel Code -->
     <script>
         ! function (f, b, e, v, n, t, s) {
@@ -247,22 +204,9 @@
                             <p>We create digital marketing strategies centered around what your business needs, rather
                                 than what everyone else is doing. All our digital marketing channels build trust,
                                 credibility, and reputation where it matters the most. </p>
-                                <form id="contact-one__form" class="banner-one__form">
-                                    <!-- <input type="hidden" name="contact_number"> -->
-                                    <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
-                                    <input type="hidden" name="id" value="c5949260f9"> -->
-                                    <input type="hidden" name="contact_number">
-                                    <div class="banner-one__form-box">
-                                        <input type="url" name="website" id="website" placeholder="Your Website URL">
-                                        <input type="email" name="email" id="email" placeholder="Email">
-                                    </div><!-- /.banner-one__form-box -->
-                                    <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
-                                        onclick="submitForm()"></input> -->
-                                    <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" 
-                                   ><span>Start
-                                            Now</span></button>
-                                    <!-- /.thm-btn banner-one__btn -->
-                                </form><!-- /.banner-one__form -->
+                                <form action="/contact-us/#contactForm">
+                                    <input type="submit" value="Contact Us" class="thm-btn banner-one__btn" 
+                                       ></form>
                         </div><!-- /.banner-one__content -->
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->
@@ -476,16 +420,9 @@
                         <p><span>Newsletter</span></p>
                         <h3>Signup for Our Latest <br> <span>Update</span></h3>
                     </div><!-- /.block-title text-center -->
-                    <form id="contact-one__form"
-                        class="mailchimp-one__form">
-                        <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
-                        <input type="hidden" name="id" value="c5949260f9"> -->
-                        <input type="hidden" name="contact_number">
-                        <input type="email" name="email" id="email" placeholder="Enter your email">
-                        <button type="submit" value="Send" class="thm-btn mailchimp-one__btn g-recaptcha" data-sitekey="6LeVfA0aAAAAAFPKftKr3FaM2WwKPC2yIPSOXVRw"
-                            >Subscribe Now</button>
-                        <!-- /.thm-btn mailchimp-one__btn -->
-                    </form><!-- /.mailchimp-one__form -->
+                    <form action="/contact-us/#contactForm">
+                        <input type="submit" value="Contact Us" class="thm-btn banner-one__btn" 
+                           ></form>
                 </div><!-- /.inner-container -->
             </div><!-- /.container -->
         </section><!-- /.mailchimp-one -->
