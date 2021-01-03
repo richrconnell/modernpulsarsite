@@ -364,7 +364,8 @@
                     <div class="col-xl-7">
                         <div class="contact-two__form-wrap">
                             <h3>Ready to Get Started?</h3>
-                            <form class="contact-one__form" id="contact-one__form">
+                            <!-- <form class="contact-one__form" id="contact-one__form"> -->
+                                <form class="contact-one__form" id="contact-one__form" method="POST" data-netlify="true" data-netlify-recaptcha="true"></form>
                                 <input type="hidden" name="contact_number">
                                 <div class="row">
                                     <div class="col-md-6">
@@ -382,6 +383,7 @@
                                     <div class="col-md-6">
                                         <input type="text" name="message" placeholder="Message" id="message">
                                     </div><!-- /.col-md-6 -->
+                                    <div data-netlify-recaptcha="true"></div>
                                     <div class="col-md-12 text-center">
                                         <button type="submit" id="submit" value="Send"
                                         class="thm-btn contact-one__btn" 
