@@ -508,10 +508,22 @@
             <div class="cursor-follower"></div>
         </div><!-- /.search-popup__overlay -->
         <div class="search-popup__inner">
-            <form action="#" class="search-popup__form">
-                <input type="text" name="search" placeholder="Type here to Search....">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+            <form id="contact-one__form" class="banner-one__form">
+                <!-- <input type="hidden" name="contact_number"> -->
+                <!-- <input type="hidden" name="u" value="954012d85de586753d2d51b84">
+                <input type="hidden" name="id" value="c5949260f9"> -->
+                <input type="hidden" name="contact_number">
+                <div class="banner-one__form-box">
+                    <input type="url" name="website" id="website" placeholder="Website* http://...com">
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div><!-- /.banner-one__form-box -->
+                <!-- <input type="button" value="Send" id="btnsubmit" placeholder="Start Now"
+                    onclick="submitForm()"></input> -->
+                <button type="submit" value="Send" class="thm-btn banner-one__btn g-recaptcha" 
+               ><span>Start
+                        Now</span></button>
+                <!-- /.thm-btn banner-one__btn -->
+            </form><!-- /.banner-one__form -->
         </div><!-- /.search-popup__inner -->
     </div><!-- /.search-popup -->
 
